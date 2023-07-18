@@ -12,14 +12,9 @@ $ vi tflite_classification.c
 
 +#define PARSER
 
-To Run the install script:
-   $ cd <path to directory in Git repository>/gst_tflite
-   $ sh install.sh
-```
-
-```shell
-    sh-4.4# cd <path to directory in Git repository>/gst_tflite/src
-    sh-4.4# make
+To Compile:
+$ cd tflite_classification/
+$ make
 ```
 
 ## 3. Push resources to the device
@@ -31,14 +26,10 @@ $ adb push mobilenet.labels /data
 
 ## 4. Run the demo app
 ```
-+ Click left-top button on weston display to open weston-terminal
-+ Run ```./tflite_object_detection``` in weston-terminal 
-
-```shell
-    sh-4.4# ./tflite_object_detection
+$ adb shell
+$ export XDG_RUNTIME_DIR=/run/user/root
+$ ./data/tflite_classification
 ```
-
-![Image text](image/gst-tflite2.png)
 
 ## License
 This is licensed under the BSD 3-clause-Clear “New” or “Revised” License. Check out the [LICENSE](LICENSE) for more details.

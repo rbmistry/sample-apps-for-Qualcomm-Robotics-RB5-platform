@@ -23,19 +23,18 @@ Apply one operation at a time.
 
 Example to transform video from camera 0:
 ``` bash
-$cd <path to directory in Git repository>/gst_transform
+$ adb disable-verity
+$ adb reboot
+$ adb wait-for-device root
+### The above three steps only need to be operated once and will always be valid.
+
+$ cd /data/gstreamer-applications/transform
+$ export XDG_RUNTIME_DIR=/run/user/root
 $ ./transform_display 0 flip v
 $ ./transform_display 0 flip h
 $ ./transform_display 0 rotate 2
 $ ./transform_display 0 crop 10 10 200 100
 ```
-
-The output screenshots of examples in the follow:
-![Image text](image/gst-transform-flip-v.png)
-![Image text](image/gst-transform-flip-h.png)
-![Image text](image/gst-transform-flip-rotate2.png)
-![Image text](image/gst-transform-flip-crop.png)
-
 
 ### Stop Transform Display:
 
